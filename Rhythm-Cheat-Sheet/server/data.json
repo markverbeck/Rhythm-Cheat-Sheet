@@ -1,0 +1,202 @@
+{
+  "players": [
+    {
+      "name": "elNeNe",
+      "password": "bob",
+      "fav": "Food",
+      "answer": "Grilled Cheese",
+      "id": 9375,
+      "scores": {
+        "Whole": {
+          "name": "Whole",
+          "score": 100
+        },
+        "Half": {
+          "name": "Half",
+          "score": 0
+        },
+        "Quarter": {
+          "name": "Quarter",
+          "score": 0
+        },
+        "Eighth": {
+          "name": "Eighth",
+          "score": 0
+        },
+        "Sixteenth": {
+          "name": "Sixteenth",
+          "score": 0
+        },
+        "Triplet": {
+          "name": "Triplet",
+          "score": 0
+        }
+      }
+    },
+    {
+      "name": "theDink",
+      "password": "lazyass",
+      "fav": "Sport",
+      "answer": "sitting",
+      "id": 5623,
+      "scores": {
+        "Whole": {
+          "name": "Whole",
+          "score": 0
+        },
+        "Half": {
+          "name": "Half",
+          "score": 0
+        },
+        "Quarter": {
+          "name": "Quarter",
+          "score": 100
+        },
+        "Eighth": {
+          "name": "Eighth",
+          "score": 85
+        },
+        "Sixteenth": {
+          "name": "Sixteenth",
+          "score": 47
+        },
+        "Triplet": {
+          "name": "Triplet",
+          "score": 96
+        }
+      }
+    },
+    {
+      "name": "bob",
+      "password": "bob",
+      "fav": "Actor",
+      "answer": "bob",
+      "id": 4099,
+      "scores": {
+        "Whole": {
+          "name": "Whole",
+          "score": 100
+        },
+        "Half": {
+          "name": "Half",
+          "score": 100
+        },
+        "Quarter": {
+          "name": "Quarter",
+          "score": 87
+        },
+        "Eighth": {
+          "name": "Eighth",
+          "score": 69
+        },
+        "Sixteenth": {
+          "name": "Sixteenth",
+          "score": 0
+        },
+        "Triplet": {
+          "name": "Triplet",
+          "score": 36
+        }
+      }
+    },
+    {
+      "name": "Hank Aaron",
+      "password": "baseball",
+      "fav": "Movie",
+      "answer": "star wars",
+      "id": 4590,
+      "scores": {
+        "Whole": {
+          "name": "Whole",
+          "score": 100
+        },
+        "Half": {
+          "name": "Half",
+          "score": 0
+        },
+        "Quarter": {
+          "name": "Quarter",
+          "score": 81
+        },
+        "Eighth": {
+          "name": "Eighth",
+          "score": 0
+        },
+        "Sixteenth": {
+          "name": "Sixteenth",
+          "score": 79
+        },
+        "Triplet": {
+          "name": "Triplet",
+          "score": 78
+        }
+      }
+    },
+    {
+      "name": "Biff",
+      "password": "12345678",
+      "fav": "Movie",
+      "answer": "back to the future",
+      "id": 7196,
+      "scores": {
+        "Whole": {
+          "name": "Whole",
+          "score": 0
+        },
+        "Half": {
+          "name": "Half",
+          "score": 0
+        },
+        "Quarter": {
+          "name": "Quarter",
+          "score": 0
+        },
+        "Eighth": {
+          "name": "Eighth",
+          "score": 0
+        },
+        "Sixteenth": {
+          "name": "Sixteenth",
+          "score": 0
+        },
+        "Triplet": {
+          "name": "Triplet",
+          "score": 0
+        }
+      }
+    },
+    {
+      "name": "po",
+      "password": "po",
+      "fav": "Song",
+      "answer": "po",
+      "id": 5810,
+      "scores": {
+        "Whole": {
+          "name": "Whole",
+          "score": 0
+        },
+        "Half": {
+          "name": "Half",
+          "score": 0
+        },
+        "Quarter": {
+          "name": "Quarter",
+          "score": 0
+        },
+        "Eighth": {
+          "name": "Eighth",
+          "score": 0
+        },
+        "Sixteenth": {
+          "name": "Sixteenth",
+          "score": 0
+        },
+        "Triplet": {
+          "name": "Triplet",
+          "score": 0
+        }
+      }
+    }
+  ]
+}
