@@ -86,7 +86,7 @@ export default {
       this.createNew = false;
     }
   },
-  created(){
+  mounted(){
     if (process.client) {
       if(document.cookie){
       this.loggedIn = true;
