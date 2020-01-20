@@ -270,7 +270,7 @@ export default {
       return Computed(this.choices, this.choice).image;
     }
   },
-  created: function () {
+  mounted: function () {
       if (process.client) {
         window.addEventListener('keyup', this.keyUpFunction);
         const cookiez = document.cookie.split("=");

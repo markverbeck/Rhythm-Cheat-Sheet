@@ -40,7 +40,7 @@ export default {
         })
       }
   },
-  created(){
+  mounted(){
     if (process.client) {
       const cookiez = document.cookie.split("=");
       this.id = cookiez[2];
