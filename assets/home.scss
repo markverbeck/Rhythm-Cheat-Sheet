@@ -1,33 +1,36 @@
-.hero{
+.hero {
   background: #fff;
   border: 3px solid #42b983;
   border-radius: 5px;
   display: block;
-  
+
 }
 
-.homeHero{
-  @media(max-width: 500px){
+.homeHero {
+  @media(max-width: 500px) {
     display: none;
   }
 }
 
-.musicBackground{
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 58rem 18px;
-    @media(max-width: 1200px){
-      background-image: none !important;
-    }
-    h1{
-      margin-top: 3rem;
-    }
-    h2{
-        margin-bottom: 3rem;
-      }
+.musicBackground {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 58rem 18px;
+
+  @media(max-width: 1200px) {
+    background-image: none !important;
+  }
+
+  h1 {
+    margin-top: 3rem;
+  }
+
+  h2 {
+    margin-bottom: 3rem;
+  }
 }
 
-.noteCard{
+.noteCard {
   width: 100%;
   max-width: 600px;
   border: 3px solid #42b983;
@@ -40,15 +43,22 @@
   overflow: hidden;
   margin-bottom: 4rem;
   background: #fff;
-  @media(max-width: 500px){
+
+  @media(max-width: 768px) {
+    margin-bottom: 2rem;
+  }
+
+  @media(max-width: 500px) {
     height: 60vh;
   }
-  img{
+
+  img {
     // width: 100%;
     max-width: 200px;
     transition: transform .4s ease-out;
   }
-  .mask{
+
+  .mask {
     transition: transform .4s ease-out;
     position: absolute;
     bottom: 0;
@@ -66,15 +76,18 @@
     align-items: center;
     justify-content: center;
     transform: translateX(600px);
-    @media(max-width: 500px){
+
+    @media(max-width: 500px) {
       line-height: 1.5;
     }
   }
-  &:hover{
-    .mask{
+
+  &:hover {
+    .mask {
       transform: translateX(0px);
     }
-    img{
+
+    img {
       transform: translateX(-600px);
     }
   }
