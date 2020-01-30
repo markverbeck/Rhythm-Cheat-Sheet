@@ -1,37 +1,42 @@
 <template>
-  <div class="noteCard" @mouseenter="startAnim" @mouseleave="stopAnim">
-    <img :src="image" />
-    <div class="mask">
-      <h3>{{duration}}<br>{{perBeat}}</h3>
-      <div style="display: flex; width: 100%; justify-content: center; padding-top: 20px;">
-        <div :style="circleOne"></div>
-        <div :style="circleTwo"></div>
+  <div>
+    <div class="noteCard" @mouseenter="startAnim" @mouseleave="stopAnim" @click="openMobileCard">
+      <img :src="image" :style="imgStyle" />
+      <div class="mask" :style="maskStyle">
+        <h3>
+          {{duration}}
+          <br />
+          {{perBeat}}
+        </h3>
+        <div style="display: flex; width: 100%; justify-content: center; padding-top: 20px;">
+          <div :style="circleOne"></div>
+          <div :style="circleTwo"></div>
+        </div>
       </div>
     </div>
+    <button class="greenButton" @click="closeMobileCard">Close</button>
   </div>
-    
 </template>
 <script>
-import Choices from '@/data/noteInfo.js';
+import Choices from "@/data/noteInfo.js";
 import Click from "@/assets/click.mp3";
 import Computed from "@/helper_functions/computedProperties.js";
 import CircleTansform from "@/helper_functions/circleTransform.js";
 import BorderAnimation from "@/helper_functions/borderAnimation.js";
 
-
 export default {
   name: "NoteCard",
-  props:{
-    choice:{
+  props: {
+    choice: {
       type: String,
       required: true,
-      default: function(){
-        return "Whole"
+      default: function() {
+        return "Whole";
       }
     }
   },
-  data(){
-    return{
+  data() {
+    return {
       choices: Choices,
       circleOne: {
         width: "50px",
@@ -39,9 +44,9 @@ export default {
         borderRadius: "50%",
         background: "#ccff00",
         border: "solid black 3px",
-        transitionDuration: '',
+        transitionDuration: "",
         marginRight: "10%",
-        transform: "scale(1)",
+        transform: "scale(1)"
       },
       circleTwo: {
         width: "50px",
@@ -49,82 +54,104 @@ export default {
         borderRadius: "50%",
         background: "#ccff00",
         border: "solid black 3px",
-        transition: '',
+        transition: "",
         marginLeft: "10%",
         transform: "scale(1)"
       },
-      setTransition: '',
-      primaryA: '',
-      secondaryA: '',
-    }
+      setTransition: "",
+      primaryA: "",
+      secondaryA: "",
+      imgStyle: {
+        transform: ""
+      },
+      maskStyle: {
+        transform: ""
+      }
+    };
   },
-  methods:{
-    startAnim: function(){
-      this.circleTwo.transition = this.secondaryBeat  + "ms";
-      this.circleOne.transition = this.primaryBeat  + "ms";
+  methods: {
+    startAnim: function() {
+      this.circleTwo.transition = this.secondaryBeat + "ms";
+      this.circleOne.transition = this.primaryBeat + "ms";
       var self = this;
 
-      this.primaryA = setInterval(function(){
-       self.circleOne.transform = self.primaryAnim;
-       self.circleOne.border = self.primaryBorderAnim;
-       self.playSound(Click);
+      this.primaryA = setInterval(function() {
+        self.circleOne.transform = self.primaryAnim;
+        self.circleOne.border = self.primaryBorderAnim;
+        self.playSound(Click);
       }, self.primaryBeat);
 
-      this.secondaryA = setInterval(function(){
-       self.circleTwo.transform = self.secondaryAnim;
-       self.circleTwo.border = self.secondaryBorderAnim;
+      this.secondaryA = setInterval(function() {
+        self.circleTwo.transform = self.secondaryAnim;
+        self.circleTwo.border = self.secondaryBorderAnim;
       }, self.secondaryBeat);
-      
     },
-    stopAnim: function(){
+    stopAnim: function() {
       clearInterval(this.primaryA);
       clearInterval(this.secondaryA);
     },
-    playSound (sound) {
-      if(sound) {
+    playSound(sound) {
+      if (sound) {
         var audio = new Audio(sound);
         audio.play();
       }
+    },
+    closeMobileCard() {
+      this.stopAnim();
+      this.imgStyle.transform = "translateX(0px)";
+      this.maskStyle.transform = "translateX(600px)";
+    },
+    openMobileCard() {
+      this.imgStyle.transform = "";
+      this.maskStyle.transform = "";
     }
   },
-  computed:{
-    image(){
+  computed: {
+    image() {
       return Computed(this.choices, this.choice).image;
     },
-    duration(){
+    duration() {
       return "Duration: " + Computed(this.choices, this.choice).duration;
     },
-    perBeat(){
+    perBeat() {
       return "Notes per beat: " + Computed(this.choices, this.choice).perBeat;
     },
-    primaryBeat(){
+    primaryBeat() {
       return Computed(this.choices, this.choice).primaryDuration;
     },
-    secondaryBeat(){
+    secondaryBeat() {
       return Computed(this.choices, this.choice).secondaryDuration;
     },
-    primaryAnim(){
+    primaryAnim() {
       return CircleTansform(this.circleOne.transform);
     },
-    secondaryAnim(){
-      return CircleTansform(this.circleTwo.transform )
+    secondaryAnim() {
+      return CircleTansform(this.circleTwo.transform);
     },
-    primaryBorderAnim(){
+    primaryBorderAnim() {
       return BorderAnimation(this.circleOne.border);
     },
-    secondaryBorderAnim(){
+    secondaryBorderAnim() {
       return BorderAnimation(this.circleTwo.border);
     }
   },
-  created(){
-    
+  created() {
     var self = this;
-    this.setTransition = setTimeout(function(){
-        self.circleTwo.transition = self.secondaryBeat  + "ms";
-        self.circleOne.transition = self.primaryBeat  + "ms";
-      }, 500);
-    
+    this.setTransition = setTimeout(function() {
+      self.circleTwo.transition = self.secondaryBeat + "ms";
+      self.circleOne.transition = self.primaryBeat + "ms";
+    }, 500);
   }
-  }
-
+};
 </script>
+
+<style lang="scss" scoped>
+button {
+  font-size: 20px;
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+    margin: auto;
+  }
+}
+</style>
