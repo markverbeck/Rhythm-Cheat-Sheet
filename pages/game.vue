@@ -104,9 +104,9 @@ export default {
 <style lang="scss" scoped>
 .comingSoon {
   display: none;
-  @media (max-width: 768px) {
-    display: block;
-  }
+  // @media (max-width: 768px) {
+  //   display: block;
+  // }
 }
 
 .bodyDiv {
@@ -174,9 +174,9 @@ h2 {
   }
 }
 
-.home {
-  @media (max-width: 768px) {
-    display: none;
-  }
-}
+// .home {
+//   @media (max-width: 768px) {
+//     display: none;
+//   }
+// }
 </style>
