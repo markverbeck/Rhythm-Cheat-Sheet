@@ -318,11 +318,13 @@ export default {
 
 .mobileButton {
   display: none;
-  border-radius: 5px;
-  background: #00b637;
+  border: none;
+  border-top: 3px solid #42b983;
+  height: 52px;
+  background: #42b983;
   @media (max-width: 768px) {
     display: block;
-    max-width: 54% !important;
+    max-width: 100% !important;
   }
 }
 </style>
