@@ -153,7 +153,7 @@ export default {
     height: inherit;
   }
   @media (max-width: 768px) {
-    display: none;
+    // display: none;
     padding: 0 1em;
     margin-top: 0em;
   }
