@@ -64,15 +64,11 @@ export default {
             id[index] === "id" ||
             id[index] === " loggedIn"
           ) {
-            console.log("if: " + id[index]);
           } else {
-            console.log("else: " + id[index]);
             this.id = id[index];
           }
         }
       }
-
-      console.log("this is the id: " + this.id);
     }
   }
 };
