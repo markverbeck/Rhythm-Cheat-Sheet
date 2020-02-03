@@ -52,9 +52,7 @@ export default {
       const submit = await axios
         .post("/api/sign-in", this.player)
         .then(function(response) {
-          self.$store.dispatch("setId", response.data.id);
           self.$emit("signed-in");
-          console.log(self.$store.state.id);
         })
         .catch(function(err) {
           self.errorBorder.border = "3px solid red";
